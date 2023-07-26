@@ -165,7 +165,7 @@
 
 ![image-20230724214317477](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307250010923.png)
 
-<img src="C:\Users\黄\AppData\Roaming\Typora\typora-user-images\image-20230724214355685.png" alt="image-20230724214355685" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252237835.png" alt="image-20230724214355685" style="zoom:50%;" />
 
 
 
@@ -232,6 +232,14 @@
 ### 基本查询
 
 ![](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307251208683.png)
+
+   distinct 跟在select 后。
+
+
+
+注：给表起了别名后，无法再用原表名限定字段。
+
+​		<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261629235.png" alt="image-20230726162949185" style="zoom:55%;" />
 
 
 
@@ -377,7 +385,7 @@
 
 
 
-## 函数
+# 函数
 
 
 
@@ -385,7 +393,7 @@
 
 
 
-### 字符串函数
+## 字符串函数
 
 ![](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252119120.png)
 
@@ -395,7 +403,7 @@
 
 
 
-### 数值函数
+## 数值函数
 
 ![image-20230725212400597](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252124729.png)
 
@@ -405,7 +413,7 @@
 
 
 
-### 日期函数
+## 日期函数
 
 ![image-20230725212938159](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252129679.png)
 
@@ -417,7 +425,7 @@
 
 
 
-### 流程函数
+## 流程函数
 
 ![image-20230725213517226](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252135334.png)
 
@@ -427,6 +435,9 @@
 
 例：![image-20230725213955930](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252140373.png)
 
+例：<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252235943.png" alt="image-20230725223344179" style="zoom:50%;" />
+
+![image-20230725223258117](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252232178.png)
 
 
 
@@ -454,40 +465,45 @@
 
 
 
-
-## 约束
+# 约束
 
 ![image-20230725214309551](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252143681.png)
 
-可以在创建/修改表时添加约束。
+- 可以在创建/修改表时添加约束。
+
+补：auto_increment ：键值自动增长
+
+例：<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252309142.png" alt="image-20230725230945031" style="zoom:50%;" />
 
 
 
 
 
+## 外键约束
 
+外键用来让两张表之间的数据建立连接（建立外键关联），从而保证数据的一致性和完整性。
 
-### 外键约束
+​	子表：有外键的表
 
-外键用来让两张表之间的数据建立连接，从而保证数据的一致性和完整性。
+​	父表：外键所关联的表
 
 ![image-20230725214544145](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252145285.png)
 
 
 
-#### 添加外键
+### 添加外键
 
 ![image-20230725214631357](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252146441.png)
 
 
 
-#### 删除外键
+### 删除外键
 
 ![image-20230725214718799](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252147840.png)
 
 
 
-#### 删除/更新行为
+### 删除/更新行为
 
 ![image-20230725214819410](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252148503.png)
 
@@ -521,39 +537,97 @@
 
 
 
-## 多表查询
 
 
 
-#### 多表关系
+
+
+
+# 多表查询
+
+
+
+
+
+## 多表关系
 
 ![image-20230725215045838](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252150920.png)
 
-##### 一对多（多对一）
+### 一对多（多对一）
 
-<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252152892.png" alt="image-20230725215208828" style="zoom:50%;" />
-
-
-
-##### 多对多
-
-<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252152374.png" alt="image-20230725215227306" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252152892.png" alt="image-20230725215208828" style="zoom:45%;" />
 
 
 
-##### 一对一
+### 多对多
 
-![image-20230725215525148](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252155225.png)
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252152374.png" alt="image-20230725215227306" style="zoom:45%;" />
+
+![image-20230726153149912](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261533998.png)
+
+
+
+### 一对一
+
+经常用来做单表的拆分。
+
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307252155225.png" alt="image-20230725215525148" style="zoom:45%;" />
+
+![](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261550555.png)
 
 
 
 
+
+
+
+
+
+
+
+
+
+## 多表查询概述
+
+![image-20230726155624142](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261556214.png)
+
+例：<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261603746.png" alt="image-20230726155920547" style="zoom:58%;" />
+
+
+
+
+
+
+
+
+
+
+
+## 分类
+
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261617557.png" alt="image-20230726161712502" style="zoom: 35%;" />
+
+
+
+### 连接查询
 
 #### 内连接
 
+内连接查询的是两张表<font color='red'>交集的部分</font>。
 
+on + 连接条件
 
+where + 筛选条件
 
+##### 隐式内连接
+
+![image-20230726162047914](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261625014.png)
+
+##### 显示内连接
+
+![image-20230726162125536](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261625414.png)
+
+例：<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261913238.png" alt="image-20230726191338171" style="zoom:60%;" />
 
 
 
@@ -561,9 +635,15 @@
 
 #### 外连接
 
+注意：都包含交集部分。
 
+##### 左外连接
 
+![image-20230726163237616](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261632672.png)
 
+##### 右外连接
+
+![image-20230726163253753](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261632828.png)
 
 
 
@@ -571,6 +651,118 @@
 
 #### 自连接
 
+![image-20230726163721025](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261637134.png)
+
+
+
+
+
+
+
+
+
+### 联合查询
+
+union ， union  all
+
+对于 union 查询，就是把多次查询的结果合并起来，形成一个新的查询结果集。、
+
+![image-20230726164902427](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261650855.png)
+
+- <font color='cornflowerblue'>**union all ：对查询结果之间合并**</font>
+- **<font color='orange'>union ： 对查询结果合并后去重</font>**
+
+- 使用条件：<font color='pink'>**所有查询语句返回的字段相同**</font>
+
+  ​                   <img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261701044.png" alt="image-20230726170143998" style="zoom:60%;" />
+
+
+
+
+
+
+
+
+
+### 子查询
+
+![image-20230726170521989](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261705102.png)
+
+
+
+#### 分类
+
+##### 根据<font color='red'>子查询</font>返回的结果
+
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261710467.png" alt="image-20230726170931967" style="zoom:50%;" />
+
+
+
+##### 根据子查询位置
+
+where后，from后，select后。
+
+
+
+
+
+
+
+
+
+#### 标量子查询
+
+子查询结果为单个值（返回的结果只有一行一列）。
+
+例：查询销售部的所有员工信息（括号中自查询的结果为一行一列，是4）
+
+​		<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261723410.png" alt="image-20230726172325350" style="zoom:50%;" />
+
+
+
+
+
+#### 列子查询
+
+子查询结果为一列。
+
+![image-20230726172621297](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261727142.png)
+
+例：![image-20230726175035149](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261755059.png)
+
+
+
+
+
+#### 行子查询
+
+子查询结果为一行。
+
+例：![image-20230726175918109](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261759152.png)
+
+
+
+
+
+#### 表子查询
+
+子查询结果为多行多列。
+
+![image-20230726181301396](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261813454.png)
+
+![image-20230726182407497](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261827505.png)
+
+![image-20230726181454630](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307261816787.png)
+
+
+
+
+
+
+
+## 案例
+
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262041998.png" alt="image-20230726203820072" style="zoom:50%;" />
 
 
 
@@ -581,13 +773,102 @@
 
 
 
-#### 子查询
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 事务
+
+
+
+<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262119482.png" alt="image-20230726211615724" style="zoom:40%;" />
+
+- MySQL中的事务是默认自动提交的。
+
+
+
+## 操作
+
+### 法一：关闭事务自动提交
+
+![](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262130873.png)
+
+### 法二：显式地开启事务
+
+![image-20230726213341087](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262133189.png)
+
+
+
+
+
+
+
+
+
+## 四大特性
+
+![image-20230726213859829](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262138922.png)
+
+​															因为数据最终是储存在磁盘中的。
+
+
+
+​	
+
+
+
+
+
+## 并发事务问题
+
+![image-20230726214619419](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262146554.png)
+
+
+
+
+
+
+
+
+
+## 事务的隔离级别
+
+解决并发事务所带来的问题。
+
+
+
+- **<font color='deyellow'>数据的隔离级别越高，数据越安全，但是性能越低</font>**。
+
+
+
+- 会出现的问题：
+
+![](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262254427.png)
+
+
+
+![image-20230726222340766](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307262223889.png)
 
 
 
