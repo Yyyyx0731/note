@@ -22,6 +22,22 @@
 
 
 
+# go下载驱动
+
+
+
+**<font color='red'>go get -u github.com/go-sql-driver/mysql</font>**
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -102,6 +118,25 @@
 
 - 变长字符串：<font color='orange'>**varchar ( n )** </font>，n是能够存储的<font color='orange'>最大长度</font>，超出会报错。
 - 定长字符串：<font color='cornflowerblue'>**char ( n )**</font> ，n是<font color='cornflowerblue'>定长</font>，如果实际储存长度小于n，也占用 n 个字符的空间，其他空间用空格占位。
+- double：
+
+  - double类型，长度需大于等于小数点位数，若相等则整数部分必须为0
+
+  - 假设长度为3，小数点位数为2，则整数位数为3-2=1。
+
+  - **整数位数**超出限制会导致插入失败
+
+  - **小数位数**超出限制将对超出位从后往前依次进行**五舍六入**
+
+  - ```mysql
+    //两位小数，一位整数
+    CREATE TABLE test (
+      column_double double(3,2)
+    )
+    ```
+
+    
+
 
 补：<img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307250009240.png" alt="image-20230724213121534" style="zoom:50%;" />
 
@@ -296,6 +331,45 @@
 ![image-20230725195048911](https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307251951769.png)
 
 <img src="https://cdn.jsdelivr.net/gh/Yyyyx0731/blog@img/img/202307251953373.png" alt="image-20230725195309287" style="zoom:50%;" />
+
+
+
+
+
+
+
+### 模糊查询
+
+1. ​	"%" 百分号通配符: 表示任何字符出现任意次数 (可以是0次)。、
+2. ​    "_" 下划线通配符:表示只能匹配单个字符,不能多也不能少,就是一个字符。当然，也可以like "陈"，数量不限。
+3. ​    like操作符:LIKE作用是指示mysql后面的搜索模式是利用通配符而不是直接相等匹配进行比较；但如果like后面没出现通配符，则在SQL执行优化时将 like 默认为 “=”执行
+   
+
+-- 模糊匹配含有“网”字的数据
+
+```sql
+SELECT * from app_info where appName like '%网%';
+```
+
+-- 模糊匹配以“网”字结尾的数据
+
+```sql
+SELECT * from app_info where appName like '%网';
+```
+
+-- 模糊匹配以“网”字开头的数据
+
+```sql
+SELECT * from app_info where appName like '网%';
+```
+
+-- 模糊匹配含有“xxx网xxx车xxx”的数据,如："途途网约车司机端、网络约车平台"
+
+```sql
+SELECT * from app_info where appName like '%网%车%';
+```
+
+
 
 
 
